@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV — Ana Sánchez Suárez</title>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent: #0b3b66;
+      --muted: #6b7280;
+      --paper: #ffffff;
+      --bg: #f5f7fb;
+      --card-shadow: 0 6px 18px rgba(11,59,102,0.06);
+      --gap: 18px;
+    }
+
+    /* Reset y base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+    }
+
+    /* Contenedor principal */
+    .cv {
+      max-width: 980px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #fff 0%, #fbfcff 100%);
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 28px;
+      padding: 28px;
+      box-shadow: var(--card-shadow);
+      align-items: start;
+    }
+
+    /* SIDEBAR IZQUIERDA */
+    .sidebar {
+      padding: 18px;
+      border-radius: 10px;
+      background: rgba(11,59,102,0.03);
+      min-height: 420px;
+    }
+
+    .photo {
+      /* placeholder circle */
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,var(--accent),#2b6ea3);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:20px;
+      margin-bottom: 14px;
+    }
+
+    .name {
+      font-weight:700;
+      font-size:20px;
+      margin-bottom:6px;
+    }
+    .title {
+      font-size:12px;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+
+    .contact {
+      font-size:13px;
+      color:#0f172a;
+      line-height:1.6;
+      margin-bottom:14px;
+    }
+    .contact .muted { color: var(--muted); font-size:12px; display:block; margin-bottom:6px; }
+
+    .section-title {
+      font-weight:700;
+      color:var(--accent);
+      margin:18px 0 8px;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .skills-list {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .skill {
+      background: white;
+      padding:6px 8px;
+      border-radius:6px;
+      font-size:12px;
+      box-shadow: 0 2px 6px rgba(11,59,102,0.04);
+    }
+
+    /* CONTENIDO DERECHO */
+    .main {
+      padding: 18px;
+      background: transparent;
+      min-height: 420px;
+    }
+
+    .headline {
+      display:flex;
+      align-items:flex-start;
+      gap:18px;
+    }
+
+    .headline .bigname {
+      font-size:28px;
+      font-weight:800;
+      letter-spacing:0.4px;
+      margin:0;
+    }
+
+    .headline .role {
+      margin-left:auto;
+      text-align:right;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:6px;
+      color: var(--muted);
+      transform: translateY(6px);
+    }
+
+    .about {
+      margin-top:12px;
+      color:#111827;
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    /* Experience cards */
+    .experience-item {
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:10px;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.04);
+      border: 1px solid rgba(11,59,102,0.04);
+    }
+    .experience-item h4 {
+      margin:0;
+      font-size:15px;
+      font-weight:700;
+    }
+    .experience-meta {
+      font-size:12px;
+      color:var(--muted);
+      margin-top:6px;
+    }
+    .experience-desc {
+      margin-top:8px;
+      font-size:13px;
+      color:#111827;
+      line-height:1.6;
+    }
+
+    /* Educación y otros */
+    .two-columns {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+
+    .edu-item, .info-item {
+      background:white;
+      padding:12px;
+      border-radius:8px;
+      border:1px solid rgba(11,59,102,0.03);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .footer-note {
+      margin-top:18px;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width:880px){
+      .cv{grid-template-columns:1fr; padding:18px}
+      .sidebar{order:2}
+      .main{order:1}
+      .headline{flex-direction:column; align-items:flex-start}
+      .headline .role{margin-left:0}
+      .two-columns{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv" role="document" aria-label="Currículum Ana Sánchez Suárez">
+    <!-- IZQUIERDA -->
+    <aside class="sidebar" aria-labelledby="sidebar-title">
+      <div class="photo" aria-hidden="true">AS</div>
+      <div class="name">Ana Sánchez Suárez</div>
+      <div class="title">Estudiante en Desarrollo de Aplicaciones Multiplataforma</div>
+
+      <div class="section-title">Sobre mí</div>
+      <div class="contact">
+        <span class="muted">Residencia</span>
+        Valencia<br/>
+        <span class="muted">Teléfono</span>
+        +34 722 28 96 95<br/>
+        <span class="muted">Email</span>
+        ssanitax@gmail.com
+      </div>
+
+      <div class="section-title">Especialidad</div>
+      <div class="skills-list" aria-hidden="false">
+        <span class="skill">Posicionamiento SEO</span>
+        <span class="skill">Marketing y Publicidad</span>
+        <span class="skill">WordPress</span>
+        <span class="skill">SEMrush</span>
+      </div>
+
+      <div class="section-title">Datos de interés</div>
+      <div style="font-size:13px; line-height:1.5;">
+        Carné de conducir y vehículo propio.<br/>
+        Titulación de monitora de campamentos — experiencia con niños y organización.
+      </div>
+
+    </aside>
+
+    <!-- DERECHA -->
+    <main class="main" aria-labelledby="main-title">
+      <header class="headline">
+        <h1 class="bigname">Ana Sánchez</h1>
+        <div class="role">E S T U D I A N T E <br/> D E S A R R O L L O</div>
+      </header>
+
+      <section class="about" aria-labelledby="about-title">
+        <p><strong>SOBRE MÍ</strong></p>
+        <p>
+          Cuento con habilidades para la resolución de problemas y mantengo siempre una actitud positiva.
+          Tengo competencias digitales e interés constante por seguir aprendiendo. Me considero creativa
+          y destaco por mi capacidad de trabajo en equipo.
+        </p>
+      </section>
+
+      <div class="section-title" style="margin-top:18px">Experiencia</div>
+
+      <article class="experience-item" aria-labelledby="exp1">
+        <h4 id="exp1">Kangar — Técnico Marketing y Publicidad</h4>
+        <div class="experience-meta">De mayo a junio de 2023</div>
+        <div class="experience-desc">
+          Desarrollé tareas de copywriting digital y arquitectura web, además de la gestión de blogs en redes sociales
+          y el diseño de logotipos. También cuento con experiencia en el uso de SEMrush, investigación de palabras clave
+          y posicionamiento SEO.
+        </div>
+      </article>
+
+      <article class="experience-item" aria-labelledby="exp2">
+        <h4 id="exp2">CitySem — Especialista en posicionamiento SEO</h4>
+        <div class="experience-meta">De junio a septiembre de 2023</div>
+        <div class="experience-desc">
+          Gestión de blogs y redes sociales, uso de SEMrush para SEO, investigación de palabras clave y manejo de WordPress.
+        </div>
+      </article>
+
+      <div class="section-title">Educación</div>
+
+      <div class="two-columns" role="list">
+        <div class="edu-item" role="listitem">
+          <strong>Desarrollo de aplicaciones multiplataforma</strong><br/>
+          Ciclo formativo de grado superior — CEAC<br/>
+          Valencia — Desde septiembre de 2025 hasta la actualidad
+        </div>
+
+        <div class="edu-item" role="listitem">
+          <strong>Marketing y publicidad</strong><br/>
+          Ciclo formativo de grado superior — IES Ángel Ganivet<br/>
+          Granada — Desde septiembre de 2021 hasta junio de 2023
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top:16px">Proyectos / tareas</div>
+      <div class="experience-item" style="margin-top:10px">
+        <div class="experience-desc">
+          Gestión de blogs en redes sociales, uso de SEMrush para SEO, investigación de palabras clave y manejo de WordPress.
+          Diseño de logotipos y copywriting digital.
+        </div>
+      </div>
+
+      <p class="footer-note">Contacto: ssanitax@gmail.com • Valencia • +34 722 28 96 95</p>
+
+    </main>
+  </div>
+
+</body>
+</html>
+
