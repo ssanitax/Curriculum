@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0f172a; /* Azul noche muy profesional */
-            --accent: #3b82f6;  /* Azul tech */
+            --primary: #0f172a; /* Negro/Azul noche */
+            --accent: #3b82f6;  /* Azul Portafolio */
             --text: #334155;
             --bg: #ffffff;
             --light-bg: #f8fafc;
@@ -33,7 +33,7 @@
             border-radius: 4px;
         }
 
-        /* Cabecera con Foto */
+        /* Cabecera con Foto Carné */
         header {
             display: flex;
             align-items: center;
@@ -47,9 +47,10 @@
             flex-shrink: 0;
             width: 120px;
             height: 180px;
-            border-radius: 12px; /* Cuadrado con bordes suaves, muy actual */
+            border-radius: 4px; 
             overflow: hidden;
             background: #e2e8f0;
+            border: 1px solid #e2e8f0;
         }
 
         .photo-container img {
@@ -62,7 +63,7 @@
             font-size: 2.8rem;
             color: var(--primary);
             letter-spacing: -1px;
-            line-height: 1;
+            line-height: 1.1;
         }
 
         .header-text h2 {
@@ -85,7 +86,51 @@
         .contact-item { display: flex; align-items: center; gap: 8px; color: #64748b; }
         .contact-item i { color: var(--accent); }
 
-        /* Estructura de Secciones */
+        /* Contenedor de Botones */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Botón Portafolio Azul */
+        .btn-portfolio {
+            background-color: var(--accent);
+            color: white;
+            border: 2px solid var(--accent);
+        }
+
+        .btn-portfolio:hover {
+            background-color: white;
+            color: var(--accent);
+        }
+
+        /* Botón GitHub Negro */
+        .btn-github {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-github:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Secciones */
         section { margin-bottom: 40px; }
 
         .section-title {
@@ -107,9 +152,7 @@
             margin-left: 15px;
         }
 
-        .content-block {
-            margin-bottom: 25px;
-        }
+        .content-block { margin-bottom: 25px; }
 
         .block-header {
             display: flex;
@@ -121,10 +164,8 @@
         .title { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
         .date { font-size: 0.85rem; color: #94a3b8; font-weight: 500; }
         .subtitle { color: var(--accent); font-weight: 600; margin-bottom: 8px; }
-
         .description { text-align: justify; color: var(--text); }
 
-        /* Datos de interés en formato pastilla */
         .pills {
             display: flex;
             flex-wrap: wrap;
@@ -145,11 +186,14 @@
             header { flex-direction: column; text-align: center; gap: 20px; }
             .cv-card { padding: 30px 20px; }
             .block-header { flex-direction: column; }
+            .btn-group { justify-content: center; width: 100%; }
+            .btn { width: 100%; justify-content: center; }
         }
 
         @media print {
             body { background: white; padding: 0; }
-            .cv-card { box-shadow: none; }
+            .cv-card { box-shadow: none; border: none; }
+            .btn-group { display: none; }
         }
     </style>
 </head>
@@ -168,6 +212,15 @@
                 <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Valencia</div>
                 <div class="contact-item"><i class="fas fa-phone"></i> +34 722 28 96 95</div>
                 <div class="contact-item"><i class="fas fa-envelope"></i> ssanitax@gmail.com</div>
+            </div>
+
+            <div class="btn-group">
+                <a href="URL_PORTAFOLIO" class="btn btn-portfolio" target="_blank">
+                    <i class="fas fa-briefcase"></i> Portafolio
+                </a>
+                <a href="URL_GITHUB" class="btn btn-github" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </div>
         </div>
     </header>
